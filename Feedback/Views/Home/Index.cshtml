@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+    <h1>Have your say!</h1>
+    <div class="page-info">
+        Want a new feature? Got a great idea for a new application or a handy change to existing application? The purpose of this site is to provide a way to informally give feedback to the Development &amp; Integration team at TDHB. <br/>Specific problems or requests that need immediate attention should go to <a href="mailto:nope@nope.com">Service Desk</a>.
+    </div>
+    <div id="content" class="container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+
+    <script type="text/javascript">
+        function GetFeedbackDataUrl() {
+            var feedbackDataUrl = "@Url.Action("AllFeedback", "Home")";
+            console.log(feedbackDataUrl);
+            return feedbackDataUrl;
+        }
+
+        function GetFeedbackVoteUp() {
+            var asdf = "@Url.Action("VoteUpFeedback", "Home")";
+            console.log(asdf);
+            return asdf;
+        }
+        function GetFeedbackVoteDown() {
+            var asdf = "@Url.Action("VoteDownFeedback", "Home")";
+            console.log(asdf);
+            return asdf;
+        }
+        function GetFeedbackNewUrl() {
+            var asdf = "@Url.Action("AddFeedback", "Home")";
+            console.log(asdf);
+            return asdf;
+        }
+
+        function GetBaseUrl() {
+            var baseUrl = "@Url.Action("AllFeedback", "Home")";
+            console.log(baseUrl);
+            return baseUrl;
+        }
+    </script>
+    <script src="@Url.Content("~/js/tutorial.jsx")"></script>
+</body>
+</html>
